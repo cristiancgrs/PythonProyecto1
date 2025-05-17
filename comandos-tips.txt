@@ -1,0 +1,51 @@
+Una vez que se tiene el directorio en blanco descargado del github se procede a usar los siguientes comandos:
+
+#Crear el entorno virtual con venv(por convencion es venv) y seguido del nombre del entorno
+python -m venv appcoder
+
+#Activar el entorno virtual
+source appcoder/bin/activate
+
+pip freeze > reqiurements.txt 
+
+##Esto es solo para los profesores para instalar todos las librerias que usa el codigo
+---------------> pip install -r reqiurements.txt <----------------
+##
+
+#Crear el proyecto de django
+django-admin startproject MiProyecto .
+
+#Para ejecutar el app
+python manage.py startapp AppCoder1
+
+#Para migrar los modelos de python a una base de datos (db.sqlite3)
+python manage.py migrate
+
+#Para crear las migraciones, se puede ver en el archivo 0001_initial.py de /migrations
+python manage.py makemigrations
+
+-----------------------------------------------------------------------------------------------------------------------
+
+El archivo "manage.py" es el que ejecuta todos los comandos de django.
+En el archivo settings.py se debe agregar la app creada en el archivo INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'AppCoder1', <---- en este caso se agrego esta app
+]
+
+El usuario es admin y la contraseña es admin1234
+
+Se debe importar los modelos en el archivo AppCoder1/admin.py
+
+Se debe crear las views en el archivo AppCoder1/views.py
+
+Se debe importar las urls(AppCoder1/urls.py) creadas en el archivo MiProyecto1/urls.py
+
+#Para crear otra rama en git 
+git checkout -b "dev"
+
+-----------------------------------------------------------------------------------------------------------------------
