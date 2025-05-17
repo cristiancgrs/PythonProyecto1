@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #dce35b, #45b649); /* fondo degradado */
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #1abc9c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Principal - AppCoder</h1>
+    <p>Selecciona un link para hacer algo</p>
+    <ul>
+        <li><a href="{% url 'AppCoder1:lista_estudiantes'  %}">Lista de estudiantes</a></li>
+        <li><a href="{% url 'AppCoder1:lista_profesores'  %}">Lista de profesores</a></li>
+    </ul>
+</body>
+</html>

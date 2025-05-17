@@ -45,7 +45,10 @@ Se debe crear las views en el archivo AppCoder1/views.py
 
 Se debe importar las urls(AppCoder1/urls.py) creadas en el archivo MiProyecto1/urls.py
 
+<<<<<<< HEAD
 #Para crear otra rama en git 
 git checkout -b "dev"
 
+=======
+>>>>>>> dev
 -----------------------------------------------------------------------------------------------------------------------
