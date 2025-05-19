@@ -1,0 +1,24 @@
+{% extends 'AppCoder1/plantilla_padre.html' %}
+
+{% block title %}Crear Editorial{% endblock %}
+
+{% block content %}
+
+    <h1 align="center">Crear Editorial</h1>
+
+    <div class="form-container">
+        <form action="{% url 'AppCoder1:editoriales_formulario' %}" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Guardar Editorial</button>
+        </form>
+
+        <a href="{% url 'AppCoder1:listado_libros' %}" class="btn-back">← Volver al listado de libros</a>
+    </div>
+
+{% endblock %}

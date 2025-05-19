@@ -1,0 +1,35 @@
+{% extends 'AppCoder1/plantilla_padre.html' %}
+
+{% block title %}Listado de Libros{% endblock %}
+
+{% block content %}
+
+    <h1>Listado de Libros</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Editorial</th>
+                <th>Fecha de Publicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for libro in libros %}
+            <tr>
+                <td>{{ libro.titulo }}</td>
+                <td>{{ libro.autor }}</td>
+                <td>{{ libro.editorial }}</td>
+                <td>{{ libro.fecha_publicacion }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="botones-container">
+        <a href="{% url 'AppCoder1:libros_formulario' %}" class="btn">Agregar Libro</a>
+        <a href="{% url 'AppCoder1:autores_formulario' %}" class="btn">Agregar Autor</a>
+        <a href="{% url 'AppCoder1:editoriales_formulario' %}" class="btn">Agregar Editorial</a>
+    </div>
+{% endblock %}

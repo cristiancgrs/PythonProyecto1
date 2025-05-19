@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Blog de Libros{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'AppCoder1/css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        header img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        header .titulo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{% static 'AppCoder1/assets/images/header-libros.avif' %}" alt="Header">
+        <div class="titulo">Bienvenido a Mi Blog de Libros</div>
+    </header>
+
+    <nav>
+        <a href="{% url 'AppCoder1:libros_formulario' %}">Nuevo Libro</a>
+        <a href="{% url 'AppCoder1:autores_formulario' %}">Nuevo Autor</a>
+        <a href="{% url 'AppCoder1:editoriales_formulario' %}">Nueva Editorial</a>
+        <a href="{% url 'AppCoder1:listado_libros' %}">Buscar Libros</a>
+    </nav>
+
+    <main>
+        {% block content %}
+
+
+
+        {% endblock %}
+    </main>
+</body>
+</html>

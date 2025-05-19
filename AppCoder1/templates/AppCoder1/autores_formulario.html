@@ -1,0 +1,29 @@
+{% extends 'AppCoder1/plantilla_padre.html' %}
+
+{% block title %}Crear Autor{% endblock %}
+
+{% block content %}
+
+    <h1 align="center">Crear Autor</h1>
+
+    <div class="form-container">
+        <form action="{% url 'AppCoder1:autores_formulario' %}" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Guardar Autor</button>
+        </form>
+
+        <a href="{% url 'AppCoder1:listado_libros' %}" class="btn-back">← Volver al listado de libros</a>
+    </div>
+
+{% endblock %}

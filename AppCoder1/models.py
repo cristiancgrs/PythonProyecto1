@@ -1,33 +1,30 @@
 from django.db import models
 
-class Estudiante(models.Model):
+
+#Para entregable 19 mayo
+
+class Editorial(models.Model):
+    nombre = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre
+    
+class Autor(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
-    email = models.EmailField()
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
 
-class Profesor(models.Model):
-    nombre = models.CharField(max_length=100)
-    apellido = models.CharField(max_length=100)
-    email = models.EmailField()
-    profesion = models.CharField(max_length=100)
+
+class Libro(models.Model):
+    titulo = models.CharField(max_length=100)
+    autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
+    editorial = models.ForeignKey(Editorial, on_delete=models.CASCADE)
+    fecha_publicacion = models.DateField()
 
     def __str__(self):
-        return f"{self.nombre} {self.apellido} - {self.profesion}"
+        return f"{self.titulo} - {self.autor} - {self.editorial} - {self.fecha_publicacion}"
 
-class Curso(models.Model):
-    nombre = models.CharField(max_length=100)
-    camada = models.IntegerField()
 
-    def __str__(self):
-        return self.nombre
-
-class Entregable(models.Model):
-    nombre = models.CharField(max_length=100)
-    fecha_entrega = models.DateField()
-    entregado = models.BooleanField()
-
-    def __str__(self):
-        return self.nombre
+##
